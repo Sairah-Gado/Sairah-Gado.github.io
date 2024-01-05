@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: poppins, sans-serif;
+}
+.containers {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 30px;
+    padding: 25px;
+    background-color: palevioletred;
+    border: 1px solid black;
+    border-radius: 50px;
+}
+.con {
+    margin-top: 60px;
+}
+.intro-paras{
+    width: 50%;
+}
+.about-image {
+    width: 30%;
+}
+.cert-btn {
+    position: absolute;
+    border: none;
+    color: #ffffff;
+    width: 9em;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 300%;
+    border-radius: 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 1;
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cert-btn:hover {
+    animation: animation 8s linear infinite;
+    border: none;
+}
+@keyframes animation {
+    0% {background-position: 0%;}
+    100% {background-position: 400%;}
+}
+.cert-btn::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+    background-size: 400%;
+    border-radius: 35px;
+    transition: 1s;
+}
+.cert-btn:hover::before {
+    filter: blur(20px);
+}
+@media screen and (max-width:768px){
+    .containers{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .about-image img{
+        width: 200px;
+    height: 200px;
+    }
+    .about-image {
+        width: 100%;
+        text-align: center;
+    }
+    .intro-paras{
+        width: 100%;
+        font-size: 13px;
+    }
+    .about-image img{
+        width: 100px;
+        height: 100px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .containers{
+        border-radius: 10px;
+    }
+    .intro-paras {
+        font-size: 11px;
+    }
+}
